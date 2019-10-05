@@ -1,4 +1,4 @@
-const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser());
+const DOMPARSER = new DOMParser().parseFromString;
 /* Fetch URLs from JSON */
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
