@@ -12,7 +12,7 @@ fetch('urls.json').then((res) => {
 				console.error('URL invalid');
 				return;
 			}
-			fetch(url, 'no-cors').then((res) => {
+			fetch(url, {mode: 'no-cors'}).then((res) => {
 				res.text().then((htmlTxt) => {
 					/* Extract the RSS Feed URL from the website */
 					try {
