@@ -13,17 +13,17 @@ fetch('urls.json').then((res) => {
 				return;
 			}
 			fetch(url, {mode: 'no-cors'}).then((res) => {
-				res.text().then((htmlTxt) => {
+				res.text().then((xmlText) => {
 					/* Extract the RSS Feed URL from the website */
 					try {
-						let doc = DOMPARSER.parseFromString(htmlTxt, 'text/html');
-						var feedUrl = doc.querySelector('link[type="application/rss+xml"]').href;
+						let doc = DOMPARSER.parseFromString(xmlText, 'text/xml');
+						//var feedUrl = doc.querySelector('link[type="application/rss+xml"]').href;
 					} catch (e) {
 						console.error('Error in parsing the website');
 						return;
 					}
 					/* Fetch the RSS Feed */
-					fetch(feedUrl).then((res) => {
+					fetch(doc).then((res) => {
 						res.text().then((xmlTxt) => {
 							/* Parse the RSS Feed and display the content */
 							try {
