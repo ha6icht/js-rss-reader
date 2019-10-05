@@ -1,4 +1,4 @@
-const DOMPARSER = new DOMParser().parseFromString;
+const DOMPARSER = new DOMParser();
 /* Fetch URLs from JSON */
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
@@ -16,7 +16,7 @@ fetch('urls.json').then((res) => {
 				res.text().then((htmlTxt) => {
 					/* Extract the RSS Feed URL from the website */
 					try {
-						let doc = DOMPARSER(htmlTxt, 'text/html');
+						let doc = DOMPARSER.parseFromString(htmlTxt, 'text/html');
 						var feedUrl = doc.querySelector('link[type="application/rss+xml"]').href;
 					} catch (e) {
 						console.error('Error in parsing the website');
@@ -27,7 +27,7 @@ fetch('urls.json').then((res) => {
 						res.text().then((xmlTxt) => {
 							/* Parse the RSS Feed and display the content */
 							try {
-								let doc = DOMPARSER(xmlTxt, "text/xml");
+								let doc = DOMPARSER.parseFromString(xmlTxt, "text/xml");
 								let heading = document.createElement('h1');
 								heading.textContent = url.hostname;
 								frag.appendChild(heading);
