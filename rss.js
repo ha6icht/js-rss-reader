@@ -11,15 +11,21 @@ fetch('urls.json').then ( (res) => {
 				console.error('URL invalid');
 				return;
 			}
-			
-			await fetch(url.href, {mode: 'no-cors'}).then( async res => {
+
+			const xmlContent = async () => {
+				const response = await fetch(url.href);
+				const xmlText = await response.text();
+				return xmlText;
+			}
+			 /*fetch(url.href, {mode: 'no-cors'}).then( async res => {
 				await res.text().then((xmlTxt) => {
-				console.log(res);
-				console.log(xmlTxt);
+				*/
 				/* Fetch the RSS Feed */
+				//console.log(res);
+				console.log(xmlContent);
 				try {
 					/* Parse the RSS Feed and display the content */
-					let doc = DOMPARSER.parseFromString(xmlTxt, 'text/xml');
+					let doc = DOMPARSER.parseFromString(xmlText, 'text/xml');
 					console.log(doc);
 					/*let heading = document.createElement('h1');
 					heading.textContent = url.hostname;
