@@ -13,6 +13,7 @@ fetch('urls.json').then((res) => {
 			}
 			fetch(url.href, {mode: 'no-cors'}).then((res) => {
 				res.text().then((xmlTxt) => {
+					console.log(res);
 					console.log(xmlTxt);
 					/* Fetch the RSS Feed */
 					try {
