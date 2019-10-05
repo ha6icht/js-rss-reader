@@ -22,7 +22,7 @@ fetch('urls.json').then ( (res) => {
 				*/
 				/* Fetch the RSS Feed */
 				//console.log(res);
-				console.log(xmlContent);
+				console.log(xmlContent());
 				try {
 					/* Parse the RSS Feed and display the content */
 					let doc = DOMPARSER.parseFromString(xmlContent, 'text/xml');
