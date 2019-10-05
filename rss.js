@@ -5,13 +5,13 @@ fetch('urls.json').then((res) => {
 		JSON.parse(data).urls.forEach((u) => {
 			try {
 				var url = new URL(u);
-				console.log(url);
+				console.log(url.href);
 			}
 			catch (e) {
 				console.error('URL invalid');
 				return;
 			}
-			fetch(url, {mode: 'no-cors'}).then((res) => {
+			fetch(url.href, {mode: 'no-cors'}).then((res) => {
 				res.text().then((xmlTxt) => {
 					/* Fetch the RSS Feed */
 					try {
