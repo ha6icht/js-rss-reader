@@ -11,8 +11,7 @@ fetch('urls.json').then((res) => {
 				console.error('URL invalid');
 				return;
 			}
-			fetch(url.href, {mode: 'no-cors'}).then((res) => {
-				res.text().then((xmlTxt) => {
+			fetch(url.href, {mode: 'no-cors'}).then((res => {res.text()}).then((xmlTxt) => {
 					console.log(res);
 					console.log(xmlTxt);
 					/* Fetch the RSS Feed */
