@@ -12,7 +12,7 @@ fetch('urls.json').then ( (res) => {
 				return;
 			}
 			
-			fetch(url.href, {mode: 'no-cors'}).then( async res => {
+			await fetch(url.href, {mode: 'no-cors'}).then( async res => {
 				await res.text().then((xmlTxt) => {
 				console.log(res);
 				console.log(xmlTxt);
