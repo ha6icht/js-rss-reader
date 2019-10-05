@@ -3,9 +3,9 @@ const DOMPARSER = new DOMParser();
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
 		JSON.parse(data).urls.forEach((u) => {
-			console.log(u);
 			try {
 				var url = new URL(u);
+				console.log(url);
 			}
 			catch (e) {
 				console.error('URL invalid');
