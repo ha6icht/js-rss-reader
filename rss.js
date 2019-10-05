@@ -12,7 +12,7 @@ fetch('urls.json').then((res) => {
 				return;
 			}
 			const fetchXML = async urlToXML => {
-				const response = await fetch(urlToXML, {mode: 'no-cors'});
+				const response = await fetch(urlToXML);
 				const xmlText = await response.text();
 				return xmlText;
 			}
