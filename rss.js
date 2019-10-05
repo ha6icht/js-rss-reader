@@ -76,7 +76,7 @@ fetch('urls.json').then ( (res) => {
 			})*/
 			
 				})
-			}).catch(() => console.error('Error in fetching xml-site'));
-		})
-	})
+			})//.catch(() => console.error('Error in fetching xml-site'));
+
+
 }).catch(() => console.error('Error in fetching the URLs json'));
