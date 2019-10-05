@@ -17,7 +17,7 @@ fetch('urls.json').then((res) => {
 					/* Extract the RSS Feed URL from the website */
 					try {
 						let doc = DOMParser(htmlTxt, 'text/html');
-						var feedUrl = doc.querySelector('link[type="application/rss+xml"]').href;
+						var feedUrl = doc.querySelector('link[type="text/xml"]').href;
 					} catch (e) {
 						console.error('Error in parsing the website');
 						return;
