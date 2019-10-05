@@ -13,10 +13,10 @@ fetch('urls.json').then((res) => {
 			}
 			const fetchXML = async urlToXML => {
 				const response = await fetch(urlToXML, {mode: 'no-cors'});
-				const xmlText = response.text();
+				const xmlText = await response.text();
 				return xmlText;
 			}
-			let xmlContent = fetchXML(url.href);
+			let xmlContent = await fetchXML(url.href);
 			try {
 				/* Parse the RSS Feed and display the content */
 				let doc = DOMPARSER.parseFromString(xmlContent, 'text/xml');
