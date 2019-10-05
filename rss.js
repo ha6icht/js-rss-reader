@@ -25,7 +25,7 @@ fetch('urls.json').then ( (res) => {
 				console.log(xmlContent);
 				try {
 					/* Parse the RSS Feed and display the content */
-					let doc = DOMPARSER.parseFromString(xmlText, 'text/xml');
+					let doc = DOMPARSER.parseFromString(xmlContent, 'text/xml');
 					console.log(doc);
 					/*let heading = document.createElement('h1');
 					heading.textContent = url.hostname;
