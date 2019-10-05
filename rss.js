@@ -1,6 +1,6 @@
 const DOMPARSER = new DOMParser();
 /* Fetch URLs from JSON */
-fetch('urls.json').then((res) => {
+fetch('urls.json').then ( (res) => {
 	res.text().then((data) => {
 		JSON.parse(data).urls.forEach((u) => {
 			try {
@@ -11,9 +11,9 @@ fetch('urls.json').then((res) => {
 				console.error('URL invalid');
 				return;
 			}
-			fetch(url.href, {mode: 'no-cors'}).then((res => {
-				res.text()
-			}).then((xmlTxt) => {
+			
+			fetch(url.href, {mode: 'no-cors'}).then( async res => {
+				await res.text().then((xmlTxt) => {
 				console.log(res);
 				console.log(xmlTxt);
 				/* Fetch the RSS Feed */
@@ -69,7 +69,8 @@ fetch('urls.json').then((res) => {
 				}).catch(() => console.error('Error in fetching the RSS feed'))
 			})*/
 			
-		})).catch(() => console.error('Error in fetching xml-site'));
+				})
+			}).catch(() => console.error('Error in fetching xml-site'));
+		})
 	})
-})
 }).catch(() => console.error('Error in fetching the URLs json'));
