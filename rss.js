@@ -1,8 +1,8 @@
 const DOMPARSER = new DOMParser();
 /* Fetch URLs from JSON */
 fetch('urls.json').then((res) => {
-	console.log(res.text());
 	res.text().then((data) => {
+		console.log(res.text());
 		var frag = document.createDocumentFragment();
 		var hasBegun = true;
 		JSON.parse(data).urls.forEach((u) => {
