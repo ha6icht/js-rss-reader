@@ -24,7 +24,7 @@ fetch('urls.json').then((res) => {
 						return;
 					}
 					/* Fetch the RSS Feed */
-					fetch(feedUrl).then((res) => {
+					fetch(proxyUrl + feedUrl).then((res) => {
 						res.text().then((xmlTxt) => {
 							/* Parse the RSS Feed and display the content */
 							try {
