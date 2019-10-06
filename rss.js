@@ -1,4 +1,5 @@
-const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser())
+const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser());
+const proxyUrl = "https://cors-anywhere.herokuapp.com";
 /* Fetch URLs from JSON */
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
@@ -12,7 +13,7 @@ fetch('urls.json').then((res) => {
 				console.error('URL invalid');
 				return;
 			}
-			fetch(url).then((res) => {
+			fetch(proxyUrl + url).then((res) => {
 				res.text().then((htmlTxt) => {
 					/* Extract the RSS Feed URL from the website */
 					try {
