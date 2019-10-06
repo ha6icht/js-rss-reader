@@ -41,9 +41,6 @@ output h1 {
 	color:white;
 	font-size: 18pt;
 }
-output{
-	width: 480px;
-}
 .loader {
 	border: 6px solid #f3f3f3;
 	border-radius: 50%;
