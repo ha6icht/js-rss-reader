@@ -46,6 +46,7 @@ fetch('urls.json').then((res) => {
 								console.error('Error in parsing the feed');
 							}
 							if(hasBegun) {
+								document.querySelector('output').textContent = '';
 								document.querySelector('.loader').style.display = 'none'; 
 								hasBegun = false;
 							}
