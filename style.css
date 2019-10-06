@@ -42,7 +42,7 @@ output h1 {
 	font-size: 18pt;
 }
 .pageLoading{
-	margin: auto;
+	margin: 0 auto;
 	width: 480px;
 }
 .loader {
