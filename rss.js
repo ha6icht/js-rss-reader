@@ -12,8 +12,8 @@ fetch('urls.json').then((res) => {
 				return;
 			}
 			const fetchXML = async urlToXML => {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
-				const response = await fetch(proxyurl + urlToXML);
+				const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+				const response = await fetch(proxyUrl + urlToXML);
 				const xmlText = await response.text();
 				return xmlText;
 			}
