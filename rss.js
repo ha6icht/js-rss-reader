@@ -3,6 +3,7 @@ const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 /* Fetch URLs from JSON */
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
+		document.querySelector('output').style.display = 'none';
 		var frag = document.createDocumentFragment();
 		var hasBegun = true;
 		JSON.parse(data).urls.forEach((u) => {
@@ -51,6 +52,7 @@ fetch('urls.json').then((res) => {
 								hasBegun = false;
 							}
 							document.querySelector('output').appendChild(frag);
+							document.querySelector('output').style.display = 'block';
 						})
 					}).catch(() => console.error('Error in fetching the RSS feed'));
 				})
