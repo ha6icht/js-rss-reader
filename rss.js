@@ -49,7 +49,7 @@ fetch('urls.json').then((res) => {
 								document.querySelector('.loader').textContent = ''; 
 								hasBegun = false;
 							}
-							document.querySelector('.loader').appendChild(frag);
+							document.querySelector('output').appendChild(frag);
 						})
 					}).catch(() => console.error('Error in fetching the RSS feed'));
 				})
