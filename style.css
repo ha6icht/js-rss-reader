@@ -41,10 +41,10 @@ output h1 {
 	color:white;
 	font-size: 18pt;
 }
-.pageLoading{
+/*.pageLoading{
 	margin: 0 auto;
-	width: 480px;
-}
+	width: 30px;
+}*/
 .loader {
 	border: 6px solid #f3f3f3;
 	border-radius: 50%;
@@ -53,6 +53,7 @@ output h1 {
 	height: 30px;
 	-webkit-animation: spin 2s linear infinite; /* Safari */
 	animation: spin 2s linear infinite;
+	margin: 0 auto;
   }
   
   /* Safari */
