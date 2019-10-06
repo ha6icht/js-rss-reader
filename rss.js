@@ -46,10 +46,10 @@ fetch('urls.json').then((res) => {
 								console.error('Error in parsing the feed');
 							}
 							if(hasBegun) {
-								document.querySelector('output').textContent = ''; 
+								document.querySelector('.loader').textContent = ''; 
 								hasBegun = false;
 							}
-							document.querySelector('output').appendChild(frag);
+							document.querySelector('.loader').appendChild(frag);
 						})
 					}).catch(() => console.error('Error in fetching the RSS feed'));
 				})
