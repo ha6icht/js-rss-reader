@@ -1,4 +1,4 @@
-const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser());
+//const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser());
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const feedUrl = "https://blog.grizzley.ch/feed/";
 
