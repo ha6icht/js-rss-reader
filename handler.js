@@ -1,25 +1,15 @@
-function renderResponse(xmlTxt){
-    let xml; 
+function renderResponse(xmlTxt){ 
     try {
-        console.log('OK');
-        if(window.DOMParser){
-            console.log('Parsing chrome');
-            const parser = new DOMParser();
-            xml = parser.parseFromString(xmlTxt, "text/xml");
-            //console.log(xml);
-        }
-        else if(window.ActiveXObject){
-            console.log('Parsing');
-            xml = new ActiveXObject("Microsoft.XMLDOM");
-            xml.async = false;
-            xml.loadXML(xmlTxt);
-            console.log(xml);
-        }
+        //console.log('Parsing chrome');
+        //console.log(xmlTxt);
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlTxt, 'text/xml');
+        //console.log(xml);
         let heading = document.createElement('h1');
         heading.textContent = url.hostname;
         frag.appendChild(heading);
         xml.querySelectorAll('item').forEach(function(item) {
-            console.log(item);
+            //console.log(item);
             let temp = document.importNode(document.querySelector('template').content, true);
             let i = item.querySelector.bind(item);
             let t = temp.querySelector.bind(temp);
